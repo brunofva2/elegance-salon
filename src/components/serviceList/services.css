@@ -1,0 +1,83 @@
+/* ============================================================
+   SEÇÃO NOSSOS SERVIÇOS - CRESCIMENTO DINÂMICO
+   ============================================================ */
+
+.nossos-servicos {
+  padding: 80px 0;
+  background: #fff;
+}
+
+/* Garante que os cards na mesma linha tenham a mesma altura base */
+.nossos-servicos .row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.nossos-servicos .galeria-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%; /* Permite que o card preencha a coluna verticalmente */
+  background: #fff;
+  border-radius: 17px;
+  overflow: hidden;
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
+  transition: transform 0.4s ease;
+}
+
+/* CONTAINER DA IMAGEM - SEM TRAVA DE CRESCIMENTO */
+.img-wrapper {
+  width: 100%;
+  height: 220px; /* Altura base da imagem */
+  overflow: hidden;
+  flex-shrink: 0; /* IMPEDE que o texto esmague a imagem para cima */
+}
+
+/* Imagens um pouco maiores nos extras */
+#servicos-extras .img-wrapper {
+  height: 250px;
+}
+
+.nossos-servicos .img-fluid {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* CORPO DO CARD - EXPANSÃO TOTAL */
+.card-body-custom {
+  padding: 24px;
+  text-align: left;
+  flex-grow: 1; /* Faz o fundo branco ocupar todo o espaço restante */
+  display: flex;
+  flex-direction: column;
+  height: auto !important; /* Força o card a crescer conforme o texto */
+}
+
+.card-body-custom h4, 
+.card-body-custom h5 {
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+/* O PARÁGRAFO AGORA CRESCE LIVREMENTE */
+.card-body-custom p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #555;
+  margin-bottom: 0;
+  height: auto !important; /* Remove qualquer limite de altura */
+  min-height: min-content; /* Garante que o conteúdo dite o tamanho */
+  overflow: visible !important; /* Garante visibilidade total do texto longo */
+}
+
+/* RESPONSIVIDADE */
+@media (max-width: 768px) {
+  .img-wrapper, 
+  #servicos-extras .img-wrapper {
+    height: 180px; /* Reduz a imagem no celular para sobrar mais espaço para o texto */
+  }
+  
+  .card-body-custom {
+    padding: 15px;
+  }
+}

@@ -1,0 +1,52 @@
+/* 1. VARIÁVEIS GLOBAIS - A base de todo o design */
+:root {
+  --gold: #b08d57;
+  --gold-hover: #96794a;
+  --glass-bg: rgba(255, 255, 255, 0.4);
+  --text-dark: #333;
+  --transition-fast: 0.3s ease;
+  --font-main: 'Montserrat', sans-serif;
+  --font-serif: 'Playfair Display', serif;
+  --z-below: -10;      /* Elementos decorativos atrás do conteúdo */
+  --z-base: 1;         /* Conteúdo padrão (texto, imagens) */
+  --z-sticky: 100;     /* Elementos que grudam (ex: filtros de busca) */
+  --z-header: 1000;    /* Menu de navegação fixo */
+  --z-overlay: 1100;   /* Menu Mobile aberto / Escurecimento de fundo */
+  --z-float: 1200;     /* Botão de WhatsApp, Chat, Voltar ao Topo */
+  --z-modal: 2000;     /* Janelas pop-up de agendamento */
+}
+
+/* 2. RESET BÁSICO - Para tirar as margens padrão do navegador */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-main);
+  background-color: #fff; /* Defina uma cor de fundo padrão */
+  color: var(--text-dark);
+  overflow-x: hidden;
+ 
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 3. UTILITÁRIOS GLOBAIS - Use em todos os componentes */
+.custom-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Scroll suave para os links do Header funcionarem bem */
+html {
+  scroll-behavior: smooth; 
+  /* Ajuste este valor conforme a altura real do seu Header fixo */
+  scroll-padding-top: 80px;
+}

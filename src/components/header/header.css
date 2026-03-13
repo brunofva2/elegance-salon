@@ -1,0 +1,375 @@
+/* =========================
+   VARIÁVEIS
+========================= */
+:root {
+  --gold: #c5a47e;
+  --gold-hover: #b3926d;
+  --text-dark: #333;
+  --glass-bg: rgba(255, 255, 255, 0.85);
+  --transition-fast: 0.3s ease;
+  --font-serif: 'Playfair Display', serif;
+  
+}
+
+/* =========================
+   CONTAINER
+========================= */
+.custom-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* =========================
+   HEADER
+========================= */
+.main-header {
+ 
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: var(--z-header);
+  
+  /* 1. Transparência e Cor Base */
+  background: rgba(255, 255, 255, 0.4); 
+  
+  /* 2. Efeito de Desfoque (Glassmorphism) */
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  
+  /* 3. A "Linha de Brilho" (Borda Superior Iluminada) */
+  border-top: 1px solid rgba(255, 255, 255, 0.6);
+  
+  /* 4. Linha de baixo sutil e Sombra para dar profundidade */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1), 
+              inset 0 1px 0 rgba(255, 255, 255, 0.5); /* Brilho interno na parte de cima */
+  
+  padding: 8px 0;
+}
+
+/* =========================
+   LOGO
+========================= */
+.logo-section {
+ display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  padding: 5px 0 ;
+}
+.logo-section:hover {
+  transform: scale(1.1); /* Leve pulsação ao passar o mouse */
+}
+.logo-img-main {
+  width: auto; /* Tamanho ligeiramente maior para destacar os detalhes das rosas */
+  height: 100px;
+  object-fit: contain;
+  
+  background: transparent; 
+  margin:-30px ; /* Ajuste fino para centralizar verticalmente */
+  filter: drop-shadow(0 4 12px rgba(197, 164, 126, 0.3));
+  
+  
+  z-index: 10;
+}
+
+
+.logo-text {
+  line-height: 1.4;
+  font-size: clamp(3rem, 5.5rem, 10rem);
+  color: transparent; /* Cor transparente para o gradiente aparecer */
+ letter-spacing: 4px;
+
+  font-family: var(--font-serif);
+  color: var(--gold);
+  font-weight: 400;
+  letter-spacing: 3px;
+  font-size: 2.1rem;
+}
+
+/* =========================
+   NAV DESKTOP
+========================= */
+.nav-links-container {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: var(--text-dark);
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  font-weight: 600;
+  position: relative;
+  padding: 6px 0;
+  transition: color var(--transition-fast);
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 50%;
+  background-color: var(--gold);
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* =========================
+   CONTROLES
+========================= */
+.header-controls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.btn-agendar {
+  /* Mantendo suas bases */
+  
+  background-color: var(--gold);
+  color: white;
+  border: none;
+  border-radius: 50px;
+  padding: 10px 22px 10px; /* Aumentei levemente para melhor toque no mobile */
+  font-size: 0.65rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
+  white-space: nowrap;
+  
+  /* --- NOVAS ALTERAÇÕES PARA O GLOW --- */
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  
+  /* Sombra suave de base (Glow parado) */
+  box-shadow: 0 4px 15px rgba(212, 163, 115, 0.4); /* Use a cor da sua var(--gold) aqui */
+}
+
+/* Efeito ao passar o mouse (Hover) */
+.btn-agendar:hover {
+  transform: translateY(-2px); /* Elevação suave */
+  background-color: var(--gold); /* Mantém a cor ou clareia levemente */
+  
+  /* Expansão do Glow */
+  box-shadow: 0 6px 20px rgba(212, 163, 115, 0.6);
+  letter-spacing: 1px; /* Toque de sofisticação */
+}
+
+/* Efeito de reflexo "passante" (O brilho que corre pelo botão) */
+.btn-agendar::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+  transition: all 0.6s;
+}
+
+.btn-agendar:hover::before {
+  left: 100%;
+}
+/* =========================
+   HAMBÚRGUER
+========================= */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+  z-index: 1001;
+}
+
+.bar {
+  width: 25px;
+  height: 3px;
+  background-color: var(--text-dark);
+  transition: 0.3s;
+}
+
+/* =========================
+   BANNER
+========================= */
+.banner {
+  position: relative; /* Essencial para o ::after funcionar */
+ background-image: 
+    radial-gradient(circle, rgba(0,0,0,0.3) 0%, transparent 70%),
+    url(https://images.pexels.com/photos/7750114/pexels-photo-7750114.jpeg);
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  
+}
+.banner-blur-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    radial-gradient(circle, rgba(0,0,0,0.3) 0%, transparent 70%),
+    url(https://images.pexels.com/photos/7750114/pexels-photo-7750114.jpeg);
+  background-size: cover;
+  background-position: center;
+  
+  /* Controle de desfoque aqui */
+  filter: blur(3px); 
+  
+  /* Importante: aumenta o tamanho para não aparecer bordas brancas ao desfocar */
+  transform: scale(1.1); 
+  z-index: 1;
+}
+.banner::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 30vh; /* O degradê começa 30% antes do fim da foto */
+  background: linear-gradient(to bottom, transparent, #ffffff);
+  z-index: 2;
+}
+
+.banner-content {
+ position: relative; /* Essencial para o z-index funcionar */
+  z-index: 3; /* Coloca o texto acima de todo o desfoque */
+  
+  text-align: center;
+  animation: fadeIn 2.8s ease-out;
+}
+
+.banner-title {
+  line-height: 1.4;
+  font-size: clamp(2rem, 4.5rem, 10rem);
+  color: transparent; /* Cor transparente para o gradiente aparecer */
+ letter-spacing: 4px;
+
+  font-family: var(--font-serif);
+  position: relative;
+  z-index: 2;
+  /* Cria o gradiente metálico (Gold Leaf) */
+  background: linear-gradient(
+    110deg, 
+    #C5A47E 20%, /* Cor original */
+    #FFF8E1 40%, /* Ponto de brilho intenso */
+    #C5A47E 60%  /* Cor original */
+  );
+  background-size: 150% auto;
+  
+  /* Corta o gradiente para preencher apenas o texto */
+  -webkit-background-clip: text;
+  background-clip: text;
+  
+  /* Torna o texto transparente para o gradiente aparecer */
+  -webkit-text-fill-color: transparent;
+  text-fill-color: transparent;
+  
+  /* Animação para o brilho "passar" */
+  animation: shineGold 2s ease-out forwards;
+  animation-delay: 1s;
+}
+
+.divider {
+  width: 120px; /* Linha um pouco mais longa e fina */
+  height: 1px;
+  background: #C5A47E; /* Mesma cor do título para harmonia total */
+  margin: 1.5rem auto;
+  opacity: 0.5; /* Mais discreta */
+}
+
+.banner-subtitle {
+  position: relative;
+  z-index: 2;
+  font-family: 'Montserrat', sans-serif;
+  color: #FFFFFF;
+  font-size: 0.75rem; /* Menor para criar hierarquia de luxo */
+  text-transform: uppercase;
+  letter-spacing: 12px; /* Ultra espaçado */
+  font-weight: 300;
+  opacity: 0.8;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* =========================
+   MOBILE
+========================= */
+@media (max-width: 991px) {
+
+  .logo-text {
+    display: none;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+
+  .btn-agendar {
+    padding: 8px 16px;
+    font-size: 0.7rem;
+    box-shadow: 0 4px 10px rgba(212, 163, 115, 0.3); /* Glow menor no mobile */
+  }
+
+  .nav-links-container {
+    position: fixed;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    height: calc(100vh - 70px);
+    background: rgba(255, 255, 255, 0.98);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    transform: translateX(-100%);
+    transition: transform 0.4s ease;
+    z-index: 999;
+  }
+
+  .nav-links-container.active {
+    transform: translateX(0);
+  }
+
+  /* Animação X */
+  .bar.open:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  .bar.open:nth-child(2) {
+    opacity: 0;
+  }
+
+  .bar.open:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+}

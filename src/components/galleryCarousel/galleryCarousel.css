@@ -1,0 +1,139 @@
+/* Container da Galeria - Fazendo o overlap no Banner */
+.nossa-galeria {
+   
+  position: relative;
+  z-index: 10;
+   /* Sobe a galeria sobre o degradê do banner */
+  padding-bottom: 80px;
+  border-top-left-radius: 60px;
+  border-top-right-radius: 60px;
+}
+
+.subtitle {
+  text-transform: uppercase;
+  letter-spacing: 6px;
+  font-size: 0.8rem;
+  color: var(--gold);
+  font-weight: 600;
+  margin-bottom: 12px;
+  display: block;
+  
+  /* Estado inicial para animação de subida */
+  opacity: 0;
+  transform: translateY(15px);
+  transition: all 0.8s ease-out;
+}
+
+.animate-now .subtitle {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.section-header {
+  margin-bottom: 3.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.section-title {
+    margin-top: 0;
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 5vw, 2.8rem); /* Responsivo */
+  color: #1a1a1a;
+  font-style: italic;
+  margin: 0;
+  position: relative;
+  letter-spacing: 2px;
+  text-shadow: #1a1a1a 1px 2px 3px;
+}
+
+
+.section-title::after {
+ content: '';
+  display: block;
+  width: 380px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--gold) 50%, transparent);
+  margin: 5px auto 0;
+
+transform: scaleX(0);
+  opacity: 0;
+  transition: transform 1.5s cubic-bezier(0.19, 1, 0.22, 1), opacity 2s ease;
+}
+
+
+/* Animação para o título da seção */
+.animate-now .section-title::after {
+  transform: scaleX(1);
+  opacity: 1;
+
+
+}
+
+/* Card das Imagens - Efeito Elegante */
+.galeria-card {
+  background: #fff;
+  border-radius: 17px;
+  overflow: hidden;
+  transition: all 1s cubic-bezier(0.165, 0.84, 0.44, 1);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.6) !important; /* Sombra suave */
+}
+
+.galeria-card:hover {
+  transform: translateY(-10px); /* Elevação no hover */
+  box-shadow: 0 25px 45px rgba(0, 0, 0, 0.15) !important;
+}
+
+.img-fluid {
+  height: 320px; /* Aumentei um pouco para elegância */
+  width: 100%;
+  object-fit: cover;
+  transition: transform 2s ease;
+}
+
+.galeria-card:hover .img-fluid {
+  transform: scale(1.05); /* Zoom sutil na imagem */
+}
+
+/* Botão Moderno */
+.galeria-button {
+  border-radius: 50px;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 2px;
+  padding: 16px 60px;
+  border: 1px solid rgba(197, 164, 126, 0.2);
+  color: var(--gold);
+  background-color: rgba(197, 164, 126, 0.08);
+ transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  margin-top: 4rem;
+box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+
+}
+
+.galeria-button:hover {
+background-color: var(--gold);
+  color: white;
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 10px 20px rgba(189, 153, 114, 0.9);
+}
+
+
+/* Responsividade Mobile */
+@media (max-width: 768px) {
+  .nossa-galeria {
+    margin-top: -50px; 
+   
+    padding: 60px 0 /* Menor overlap no celular */
+  }
+  
+  .img-fluid {
+    height: 250px; /* Imagens menores no celular */
+  }
+
+ .row.g-4 > .col-6:nth-child(3) {
+    display: none; /* Menos espaçamento entre as colunas no celular */
+  }
+}
