@@ -1,5 +1,9 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
+
+// IMPORTANTE: O Bootstrap deve vir ANTES do seu index.css
+import 'bootstrap/dist/css/bootstrap.min.css'
+
 import './index.css'
 import App from './App.jsx'
 
