@@ -8,7 +8,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import Header from './components/header/header'
 import WhatsAppButton from './components/whatsAppButton/WhatsAppButton'
 import GalleryCarousel from './components/galleryCarousel/galleryCarousel'
-import Services from './components/serviceList/ServiceList'
+import ServiceList from './components/serviceList/serviceList_fix.jsx'
 import Testimonials from './components/testimonials/testimonials'
 import Location from './components/location'
 import Hours from './components/Hours'
@@ -23,7 +23,7 @@ function App() {
       <main>
         {/* O ideal seria ter o Banner aqui antes do carrossel, como discutimos */}
         <GalleryCarousel />
-        <Services />
+        <ServiceList />
         <Testimonials />
 
         <Location />
