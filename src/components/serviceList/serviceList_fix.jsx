@@ -27,12 +27,12 @@ function Services() {
     {
       titulo: 'Coloração Realista',
       desc: 'Cobertura total de fios brancos e técnicas de mechas.',
-      img: 'https://images.pexels.com/photos/6546374/pexels-photo-6546374.jpeg',
+      img: 'https://images.pexels.com/photos/3993311/pexels-photo-3993311.jpeg',
     },
     {
       titulo: 'Penteados & Eventos',
       desc: 'Estilos clássicos e modernos para momentos inesquecíveis.',
-      img: 'https://images.pexels.com/photos/7755226/pexels-photo-7755226.jpeg',
+      img: 'https://images.pexels.com/photos/9941096/pexels-photo-9941096.jpeg',
     },
   ]
 
