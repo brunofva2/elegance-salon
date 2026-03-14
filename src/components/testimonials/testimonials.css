@@ -61,12 +61,38 @@
 }
 
 /* Responsividade */
-@media (max-width: 768px) {
+@media (max-width: 576px) {
   .depoimento-card {
-    padding: 25px 15px;
+    padding: 15px 10px; /* Reduz o padding interno significativamente */
+    border-radius: 15px;
   }
+
   .avatar-cliente {
-    width: 75px;
-    height: 75px;
+    width: 55px;  /* Avatar bem menor para não ocupar toda a tela */
+    height: 55px;
+    margin-bottom: 10px;
+    border-width: 2px; /* Borda mais fina condizente com o tamanho */
+  }
+
+  .stars-rating {
+    font-size: 0.75rem; /* Estrelas menores */
+    margin-bottom: 8px;
+  }
+
+  .texto-depoimento {
+    font-size: 0.7rem; /* Fonte pequena para caber o texto */
+    line-height: 1.4;
+    margin-bottom: 10px;
+  }
+
+  .nome-cliente {
+    font-size: 0.65rem; /* Nome discreto na base */
+    letter-spacing: 0.5px;
+  }
+
+  /* Ajusta o espaçamento lateral da Row para os cards não colarem na borda do celular */
+  .container.my-5 {
+    padding-left: 10px;
+    padding-right: 10px;
   }
 }

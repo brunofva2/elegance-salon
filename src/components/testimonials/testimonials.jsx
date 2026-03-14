@@ -31,7 +31,7 @@ const Testimonials = () => {
       </h2>
       <Row className="g-4">
         {depoimentos.map((d, i) => (
-          <Col md={4} key={i}>
+          <Col xs={6} md={4} key={i}>
             <div className="depoimento-card">
               <div className="card-body-custom text-center">
                 <img src={d.img} alt={d.nome} className="avatar-cliente" />

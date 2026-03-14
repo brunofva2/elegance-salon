@@ -76,7 +76,7 @@ function Services() {
 
         <Row className="g-4">
           {servicosPrincipais.map((s, i) => (
-            <Col md={4} key={i}>
+            <Col xs={6} md={4} key={i}>
               <div className="galeria-card">
                 <div className="img-wrapper">
                   <img src={s.img} className="img-fluid" alt={s.titulo} />
@@ -94,7 +94,7 @@ function Services() {
           <div id="servicos-extras">
             <Row className="g-4 mt-2">
               {servicosExtra.map((s, i) => (
-                <Col md={6} lg={3} key={i}>
+                <Col xs={6} md={6} lg={3} key={i}>
                   <div className="galeria-card">
                     <div className="img-wrapper position-relative">
                       <img src={s.img} className="img-fluid" alt={s.titulo} />
