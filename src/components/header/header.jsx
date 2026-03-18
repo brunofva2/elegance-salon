@@ -47,7 +47,7 @@ function Header() {
 
           {/* CONTROLS */}
           <div className="header-controls">
-            <button className="btn-agendar">Agendar</button>
+            <button className="btn-agendar">Quero agendar agora</button>
 
             {/* Menu Hambúrguer - A classe 'open' anima as barras para formar um X */}
             <button
@@ -67,9 +67,9 @@ function Header() {
       <section className="banner" id="home">
         <div className="banner-blur-bg"></div>
         <div className="banner-content">
-          <h1 className="banner-title">Elegance Salon</h1>
+          <h1 className="banner-title">Transforme seu visual</h1>
           <div className="divider"></div>
-          <p className="banner-subtitle">A arte de cuidar de você</p>
+          <p className="banner-subtitle">Cortes, coloração e tratamentos com resultado profissional</p>
         </div>
       </section>
     </>

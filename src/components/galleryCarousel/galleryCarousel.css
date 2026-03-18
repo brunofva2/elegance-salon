@@ -3,10 +3,16 @@
    
   position: relative;
   z-index: 10;
+  margin-top: -80px; /* PUXA A GALERIA PARA CIMA DO BANNER */
+ 
    /* Sobe a galeria sobre o degradê do banner */
   padding-bottom: 80px;
   border-top-left-radius: 60px;
   border-top-right-radius: 60px;
+}
+.nossa-galeria .row {
+  display: flex;
+  align-items: stretch; /* Garante que todos os Col tenham a mesma altura */
 }
 
 .subtitle {
@@ -122,7 +128,11 @@ background-color: var(--gold);
 
 
 /* Responsividade Mobile */
-@media (max-width: 768px) {
+@media (max-width: 576px) {
+  .nossa-galeria .row {
+    --bs-gutter-x: 10px; /* Espaço fino entre os pares */
+    --bs-gutter-y: 10px;
+  }
   .nossa-galeria {
     margin-top: -50px; 
    

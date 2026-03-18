@@ -39,44 +39,44 @@
   display: flex;
   flex-direction: column;
   flex-grow: 1; /* Preenche o card para alinhar o nome na base */
+  justify-content: space-between;
 }
 
 .texto-depoimento {
   font-size: 1rem;
   line-height: 1.6;
   color: #555;
-  flex-grow: 1; /* Ocupa o espaço necessário sem cortar o texto */
   margin-bottom: 20px;
-  height: auto !important; /* Libera expansão total */
-  overflow: visible !important;
 }
 
 .nome-cliente {
-  font-weight: 700;
+ font-weight: 700;
   font-size: 0.95rem;
   color: #1a1a1a;
   text-transform: uppercase;
   letter-spacing: 1px;
-  margin-top: auto; /* Garante alinhamento na base se o texto acima for curto */
+  padding-top: 10px; /* Respiro de segurança */
+  border-top: 1px solid rgba(197, 164, 126, 0.1); /* Garante alinhamento na base se o texto acima for curto */
 }
 
 /* Responsividade */
 @media (max-width: 576px) {
   .depoimento-card {
-    padding: 15px 10px; /* Reduz o padding interno significativamente */
+    padding: 20px 15px; /* Reduz o padding interno significativamente */
+    min-height: 280px; /* Altura mínima para manter a estrutura mesmo com pouco texto */
     border-radius: 15px;
   }
 
   .avatar-cliente {
-    width: 55px;  /* Avatar bem menor para não ocupar toda a tela */
-    height: 55px;
-    margin-bottom: 10px;
+    width: 65px;  /* Avatar bem menor para não ocupar toda a tela */
+    height: 65px;
+    margin-bottom: 12px;
     border-width: 2px; /* Borda mais fina condizente com o tamanho */
   }
 
   .stars-rating {
-    font-size: 0.75rem; /* Estrelas menores */
-    margin-bottom: 8px;
+    font-size: 0.85rem; /* Estrelas menores */
+    margin-bottom: 10px;
   }
 
   .texto-depoimento {

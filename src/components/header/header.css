@@ -309,9 +309,9 @@
   z-index: 2;
   font-family: 'Montserrat', sans-serif;
   color: #FFFFFF;
-  font-size: 0.75rem; /* Menor para criar hierarquia de luxo */
-  text-transform: uppercase;
-  letter-spacing: 12px; /* Ultra espaçado */
+  font-size: 1rem; /* Menor para criar hierarquia de luxo */
+  
+  letter-spacing: 9px; /* Ultra espaçado */
   font-weight: 300;
   opacity: 0.8;
 }
@@ -325,6 +325,7 @@
    MOBILE
 ========================= */
 @media (max-width: 991px) {
+  
 
   .logo-text {
     display: none;
@@ -333,9 +334,13 @@
   .menu-toggle {
     display: flex;
   }
+  .logo-img-main {
+    height: 90px; /* Reduz um pouco o tamanho da logo para mobile */
+    margin: -20px; /* Ajuste fino para centralizar verticalmente */
+  }
 
   .btn-agendar {
-    padding: 8px 16px;
+    padding: 8px 14px;
     font-size: 0.7rem;
     box-shadow: 0 4px 10px rgba(212, 163, 115, 0.3); /* Glow menor no mobile */
   }
@@ -372,4 +377,32 @@
   .bar.open:nth-child(3) {
     transform: translateY(-8px) rotate(-45deg);
   }
+
+.banner-title {
+    font-size: clamp(2.2rem, 8vw, 3.5rem) !important; /* Ajuste dinâmico */
+    letter-spacing: -1px !important;    /* Letras mais juntas para impacto */
+    line-height: 1.1 !important;        /* Redução da redline (espaço entre linhas) */
+    margin-bottom: 5px !important;
+  }
+
+  .divider {
+    border: none !important;
+    background: var(--gold) !important;
+    opacity: 0.3 !important;
+  }
+
+  /* AJUSTE DA FRASE SUBTÍTULO (EXCELÊNCIA & CUIDADO) */
+  .banner-subtitle {
+    font-size: 0.6rem !important;       /* Menor para caber em uma linha */
+    letter-spacing: 5px !important;     /* Diminuindo de 12px para 5px para não espalhar muito */
+    line-height: 1 !important;          /* Cola o texto na linha */
+    opacity: 0.9;
+  }
+
+  /* COMPACTANDO O BANNER CONTENT */
+  .banner-content {
+    padding: 0 15px;
+    margin-top: -20px; /* Sobe um pouco o texto para compensar o desfoque */
+  }
+
 }

@@ -1,112 +1,130 @@
 /* ============================================================
-   SEÇÃO NOSSOS SERVIÇOS - CRESCIMENTO DINÂMICO
+   SEÇÃO NOSSOS SERVIÇOS - PADRÃO LUXO RESPONSIVO
    ============================================================ */
 
 .nossos-servicos {
   padding: 80px 0;
-  background: #fff;
+  background: linear-gradient(135deg, #ffffff 0%, #fcfaf7 100%);
 }
 
-/* Garante que os cards na mesma linha tenham a mesma altura base */
+/* Alinhamento perfeito das alturas dos cards na mesma linha */
 .nossos-servicos .row {
   display: flex;
   flex-wrap: wrap;
+  align-items: stretch; /* Força os cards a terem a mesma altura */
 }
 
 .nossos-servicos .galeria-card {
   display: flex;
   flex-direction: column;
-  height: 100%; /* Permite que o card preencha a coluna verticalmente */
-  background: #fff;
+  height: 100%;
   border-radius: 17px;
   overflow: hidden;
-  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
-  transition: transform 0.4s ease;
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  
+  /* EFEITO GOLDEN GLASS REFINADO */
+  background: linear-gradient(
+    135deg,
+    rgba(255, 248, 225, 0.4) 0%,
+    rgba(197, 164, 126, 0.2) 50%,
+    rgba(255, 255, 255, 0.1) 100%
+  ) !important;
+  
+  backdrop-filter: blur(12px) saturate(140%);
+  -webkit-backdrop-filter: blur(12px) saturate(140%);
+  
+  border: 1px solid rgba(197, 164, 126, 0.3) !important;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
 }
 
-/* CONTAINER DA IMAGEM - SEM TRAVA DE CRESCIMENTO */
+.nossos-servicos .galeria-card:hover {
+  transform: translateY(-8px);
+  border: 1px solid rgba(197, 164, 126, 0.8) !important;
+  box-shadow: 0 15px 35px rgba(197, 164, 126, 0.2) !important;
+  background: rgba(255, 248, 225, 0.6) !important;
+}
+
+/* WRAPPER DA IMAGEM COM PROPORÇÃO FIXA */
 .img-wrapper {
   width: 100%;
-  height: 220px; /* Altura base da imagem */
+  height: 220px; /* Altura ideal Desktop */
   overflow: hidden;
-  flex-shrink: 0; /* IMPEDE que o texto esmague a imagem para cima */
-}
-
-/* Imagens um pouco maiores nos extras */
-#servicos-extras .img-wrapper {
-  height: 250px;
+  flex-shrink: 0; /* Impede a imagem de ser esmagada pelo texto */
 }
 
 .nossos-servicos .img-fluid {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: cover; /* Mantém a proporção da foto sem achatar */
+  transition: transform 0.8s ease;
 }
 
-/* CORPO DO CARD - EXPANSÃO TOTAL */
+.galeria-card:hover .img-fluid {
+  transform: scale(1.08);
+}
+
+/* CORPO DO CARD - CONTROLE DE CRESCIMENTO */
 .card-body-custom {
-  padding: 24px;
+  padding: 20px;
   text-align: left;
-  flex-grow: 1; /* Faz o fundo branco ocupar todo o espaço restante */
+  flex-grow: 1; 
   display: flex;
   flex-direction: column;
-  height: auto !important; /* Força o card a crescer conforme o texto */
 }
 
-.card-body-custom h4,
-.card-body-custom h5 {
+.card-body-custom h4 {
+  font-size: 1.15rem;
   font-weight: 700;
-  margin-bottom: 12px;
+  margin-bottom: 8px;
+  color: #1a1a1a;
 }
 
-/* O PARÁGRAFO AGORA CRESCE LIVREMENTE */
 .card-body-custom p {
-  font-size: 0.95rem;
-  line-height: 1.6;
+  font-size: 0.9rem;
+  line-height: 1.5;
   color: #555;
   margin-bottom: 0;
-  height: auto !important; /* Remove qualquer limite de altura */
-  min-height: min-content; /* Garante que o conteúdo dite o tamanho */
-  overflow: visible !important; /* Garante visibilidade total do texto longo */
+  /* Garante que o texto ocupe o espaço necessário mas mantenha o card alinhado */
+  flex-grow: 1;
 }
 
-/* RESPONSIVIDADE */
+/* ============================================================
+   RESPONSIVIDADE MOBILE (2 COLUNAS)
+   ============================================================ */
 @media (max-width: 576px) {
   .nossos-servicos {
     padding: 40px 0;
   }
-  .nossos-servicos .row {
-    --bs-gutter-x: 0.75rem;
-    --bs-gutter-Y: 0.75rem;
-    /* Reduz o espaçamento horizontal no mobile */
-  }
+
+  /* Imagem menor para sobrar espaço para o texto no card 50/50 */
   .img-wrapper {
-    height: 120px !important;
-  }
-  #servicos-extras .img-wrapper {
-    height: 120px !important;
+    height: 140px !important; 
   }
 
   .card-body-custom {
-    padding: 10px !important; /* Menos padding no mobile para mais espaço para o texto */
+    padding: 12px !important;
+    min-height: 120px; /* Garante que o card não fique curto demais */
   }
-  .card-body-custom h4,
-  .card-body-custom h5 {
-    font-size: 0.85rem !important;
-    margin-bottom: 5px; /* Títulos um pouco maiores no mobile para legibilidade */
+
+  .card-body-custom h4 {
+    font-size: 0.9rem !important;
+    margin-bottom: 4px;
+    line-height: 1.2;
   }
+
   .card-body-custom p {
     font-size: 0.75rem !important;
     line-height: 1.3;
-  }
-  .badge {
-    font-size: 0.6rem !important;
-    padding: 3px 6px !important;
+    /* Limita a 4 linhas no mobile para manter a simetria da grade */
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
   }
 
   .galeria-button {
-    font-size: 0.75rem;
-    padding: 6px 12px;
-    width: 90%;
+    width: 100% !important;
+    padding: 12px !important;
+    font-size: 0.8rem !important;
   }
 }
