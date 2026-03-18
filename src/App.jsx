@@ -10,13 +10,13 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 // 3. Importação dos componentes
 
 import Header from './components/header/header'
-import WhatsAppButton from './components/whatsAppButton/WhatsAppButton'
-import GalleryCarousel from './components/galleryCarousel/galleryCarousel'
+import WhatsAppButton from './components/whatsAppButton/WhatsAppButton.jsx'
+import GalleryCarousel from './components/galleryCarousel/galleryCarousel.jsx'
 import ServiceList from './components/serviceList/serviceList_fix.jsx'
-import Testimonials from './components/testimonials/testimonials'
-import Location from './components/location'
+import Testimonials from './components/testimonials/testimonials.jsx'
+import Location from './components/location.jsx'
 import Hours from './components/Hours'
-import Footer from './components/footer'
+import Footer from './components/footer.jsx'
 import Features from './components/features/Features'
 import ServiceDetail from './components/serviceDetail/serviceDetail'
 
