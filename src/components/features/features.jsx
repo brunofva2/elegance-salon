@@ -3,7 +3,7 @@ import { Container, Row, Col, Button } from 'react-bootstrap';
 import { FaSnowflake, FaWifi, FaCoffee, FaShieldAlt, FaWhatsapp } from 'react-icons/fa';
 import './features.css';
 
-const Features = () => {
+const features = () => {
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef(null);
 
@@ -82,4 +82,4 @@ const Features = () => {
   );
 };
 
-export default Features;
+export default features;
