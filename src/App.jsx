@@ -17,7 +17,7 @@ import Testimonials from './components/testimonials/testimonials.jsx'
 import Location from './components/location.jsx'
 import Hours from './components/Hours'
 import Footer from './components/footer.jsx'
-import Features from './components/features/Features'
+import Features from './components/features/Features.jsx'
 import ServiceDetail from './components/serviceDetail/serviceDetail'
 
 
